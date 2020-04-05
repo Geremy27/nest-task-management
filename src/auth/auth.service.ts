@@ -16,7 +16,9 @@ export class AuthService {
     return this.userRepository.signUp(authCredentialsDTO);
   }
 
-  async signIn(authCredentialsDTO: AuthCredentialsDTO): Promise<{ accessToken: string }> {
+  async signIn(
+    authCredentialsDTO: AuthCredentialsDTO
+  ): Promise<{ accessToken: string }> {
     const { username } = authCredentialsDTO;
     const checkUserResult = await this.userRepository.validateUserPassword(
       authCredentialsDTO
